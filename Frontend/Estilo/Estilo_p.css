@@ -1,0 +1,41 @@
+body {
+    font-family: Perpetua, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:white;
+}
+header {
+    background-color: rgb(208, 67, 67);
+    color: white;
+    padding: 1px 0;
+    text-align: center;
+}
+nav{
+    background-color:  #282727;
+    text-align: center;
+    padding: 10px 0;
+}
+
+form p {
+    font-size: 20px;
+    margin: 35px;
+}
+p {
+    font-size: 20px;
+    margin: 35px;
+}
+#Boton_r{
+    background-color: #282727;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+#Boton_c{
+    background-color: #282727;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
