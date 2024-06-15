@@ -1,10 +1,13 @@
 from flask import Flask, render_template, request, jsonify
 from models import db, Habitaciones, Habitaciones
 from sqlalchemy import insert
+from flask_cors import CORS
+
 
 from config import config
 
 app = Flask(__name__)
+CORS(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@127.0.0.1:5432/app_reservas'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

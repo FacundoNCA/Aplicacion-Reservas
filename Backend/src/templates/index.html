@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="habitaciones">
+
+    </div>
+
+    <script>
+
+        function response_received(response) {
+            return response.json()
+        }
+
+        function parse_data(content) {
+            console.log("TENGO LA LISTA DE PERSONAJES!")
+
+            const container = document.getElementById("habitaciones");
+            for (let index = 0; index < content.length; index++) {
+                const tipo = document.createElement("h1")
+                tipo.append(content[index].tipo_habitacion)
+
+                const estado = document.createElement("h1")
+                estado.append(content[index].estado)
+
+                const precio = document.createElement("h1")
+                precio.append(content[index].precio_noche)
+
+                titles_container = document.createElement("div")
+
+                titles_container.append(tipo);
+                titles_container.append(estado);
+                titles_container.append(precio);
+
+                container.append(titles_container);
+            }
+        }
+
+
+        function request_error(error) {
+            console.log("ERROR")
+            console.log(error);
+        }
+
+        fetch("http://127.0.0.1:5000/")
+            .then(response_received)
+            .then(parse_data)
+            .catch(request_error)
+
+    </script>
+    
+</body>
+</html>
