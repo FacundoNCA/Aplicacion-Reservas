@@ -12,14 +12,8 @@ header {
     text-align: center;
 }
 nav{
-    background-color:  #282727;
     text-align: center;
     padding: 10px 0;
-}
-
-form p {
-    font-size: 20px;
-    margin: 35px;
 }
 p {
     font-size: 20px;
@@ -38,4 +32,19 @@ p {
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+}
+.service {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+  }
+  .service img {
+    width: 50px; 
+  }
+  .service p {
+    font-size: 14px;
+  }
+h2{
+    text-align: center;
+    margin: 20px;
 }

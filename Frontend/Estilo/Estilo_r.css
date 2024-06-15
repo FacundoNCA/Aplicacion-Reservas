@@ -25,27 +25,38 @@ nav a {
     padding: 20px;
 }
 .form-container {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
     max-width: 600px;
-    margin: auto;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.form-container input, .form-container textarea {
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-top: 10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+input[type="date"] {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
-.form-container button {
-    background-color: #4CAF50;
-    color: white;
+button[type="submit"] {
+    margin-top: 20px;
     padding: 10px 20px;
+    background-color: #282727;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-        }
-.form-container button:hover {
-    background-color: #45a049;
 }
