@@ -1,0 +1,35 @@
+Usuario
+CREATE TABLE usuario (
+id SERIAL PRIMARY KEY,
+nombre VARCHAR(50) NOT NULL,
+apellido VARCHAR(50) NOT NULL,
+direccion VARCHAR(100),
+telefono VARCHAR(20),
+email VARCHAR(50) UNIQUE NOT NULL
+);
+
+Habitacion
+CREATE TABLE habitacion (
+id SERIAL PRIMARY KEY,
+tipo VARCHAR(20) CHECK (tipo IN ('comun', 'matrimonial', 'residencial')) NOT NULL,
+precio DECIMAL(10, 2) NOT NULL,
+descripcion TEXT
+);
+
+Reserva
+CREATE TABLE reserva (
+id SERIAL PRIMARY KEY,
+usuario_id INT REFERENCES usuario(id) ON DELETE CASCADE,
+habitacion_id INT REFERENCES habitacion(id) ON DELETE CASCADE,
+fecha_inicio DATE NOT NULL,
+fecha_salida DATE NOT NULL,
+estado VARCHAR(10) CHECK (estado IN ('disponible', 'ocupado')) NOT NULL
+);
+
+Pago
+CREATE TABLE pago (
+id SERIAL PRIMARY KEY,
+metodo_pago VARCHAR(20) NOT NULL,
+monto DECIMAL(10, 2) NOT NULL,
+reserva_id INT REFERENCES reserva(id) ON DELETE CASCADE
+);
