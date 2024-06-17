@@ -1,3 +1,5 @@
+<!--Esto entra en el app.py con los html en la carpeta template 
+return render_template('Pagina_p.html', habitaciones=habitaciones_data)-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +11,9 @@
 
 <body>
     <header>
-    <h1>Bienvenidos al Hotel "Piña colada" </h1>
+        <nav id="Inicio">
+            <h1><a id ="Inicio" href="Pagina_p.html">Bienvenidos al Hotel "Piña colada"</a></h1>
+        </nav>
     </header>
     
     <form id = "Info">
@@ -59,12 +63,14 @@
     </div>
 
     <p>
-        Acá ira toda la parte de contancto y como se pueden contactar y por medio de otro href se ira a la pag contactos
+        Puede obtener todos nuestras maneras de contacto en el siguiente boton
+        <!--Acá puedo mejorar con in script ese boton y se va distinto-->
     </p>
 
     <div>
         <nav>
             <a id ="Boton_c" boton ="contacto "href="Contacto.html">Contacto </a>
         </nav>
+    </div>
 </body>
 </html>

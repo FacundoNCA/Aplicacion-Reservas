@@ -48,3 +48,9 @@ h2{
     text-align: center;
     margin: 20px;
 }
+nav #Inicio{
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
