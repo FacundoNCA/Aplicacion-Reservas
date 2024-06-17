@@ -24,7 +24,7 @@ class Reservas(db.Model):
     id_reserva = db.Column(db.Integer, primary_key=True)
     id_cliente = db.Column(db.Integer, db.ForeignKey('clientes.id_cliente'), nullable=False)
     id_habitacion = db.Column(db.Integer, db.ForeignKey('habitaciones.id_habitacion'), nullable=False)
-    fecha_llegada = db.Column(db.DateTime, default=datetime.datetime.now(), nullable=False)
+    fecha_llegada = db.Column(db.DateTime,  nullable=False)
     fecha_salida = db.Column(db.DateTime, nullable=False)
     pagado = db.Column(db.Boolean, default=False)
 

@@ -102,9 +102,8 @@ def crear_reserva():
 
     email = request.json.get("email")
     tipo_habitacion = request.json.get("tipo_habitacion")
-    cantidad_dias = request.json.get("cantidad_dias")
-    # fecha_llegada = request.json.get("fecha_llegada")
-    # fecha_salida = request.json.get("fecha_salida")
+    fecha_llegada = request.json.get("fecha_llegada")
+    fecha_salida = request.json.get("fecha_salida")
 
     cliente = Clientes.query.where(Clientes.email == email).first()
     habitacion = Habitaciones.query.where((Habitaciones.tipo_habitacion == tipo_habitacion) & (Habitaciones.disponible==True)).first()
@@ -113,7 +112,7 @@ def crear_reserva():
         id_cliente = cliente.id_cliente
         id_habitacion = habitacion.id_habitacion
 
-        nueva_reserva = Reservas(id_cliente=id_cliente, id_habitacion=id_habitacion, fecha_salida=(datetime.datetime.now()+datetime.timedelta(days=cantidad_dias)))
+        nueva_reserva = Reservas(id_cliente=id_cliente, id_habitacion=id_habitacion, fecha_llegada=datetime.datetime.strptime(fecha_llegada, '%d/%m/%Y'), fecha_salida=datetime.datetime.strptime(fecha_salida, '%d/%m/%Y'))
         db.session.add(nueva_reserva)
         habitacion.disponible = False
         db.session.commit()
