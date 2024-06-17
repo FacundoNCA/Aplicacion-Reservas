@@ -8,27 +8,28 @@
 </head>
 <body>
     
+    <h1>Agrega una habitacion</h1>
+
     <form onsubmit="handle_submit(event)">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">tipo habitacion</label>
-            <input  name="tipo_habitacion" type="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="form-floating">
+            <select class="form-select" id="floatingSelect" name="tipo_habitacion" aria-label="Floating label select example">
+              <option selected> Seleccione una opcion </option>
+              <option value="simple">Simple</option>
+              <option value="doble">Doble</option>
+              <option value="familiar">Familiar</option>
+            </select>
+            <label for="floatingSelect">Tipo de habitacion</label>
           </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Estado</label>
-          <input  name="estado" type="text"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Precio</label>
           <input type="number" class="form-control" id="exampleInputPassword1" name="precio_noche">
         </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="disponible">
+            <label class="form-check-label" for="exampleCheck1">Disponibilidad</label>
+          </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
-    <ul>
-        {% for h in habitaciones %}
-            <li>{{ h }}</li>
-        {% endfor %}
-    </ul>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
@@ -42,7 +43,8 @@
             const formData = new FormData(event.target)
 
             tipo_habitacion = formData.get("tipo_habitacion")
-            estado = formData.get("estado")
+            disponible = document.getElementById('exampleCheck1').checked; 
+            console.log(disponible)
             precio_noche = formData.get("precio_noche")
 
             fetch("http://127.0.0.1:5000/", {
@@ -52,7 +54,7 @@
                 },
                 body: JSON.stringify({
                     tipo_habitacion: tipo_habitacion,
-                    estado: estado,
+                    disponible: disponible,
                     precio_noche: precio_noche
                     
                 })
