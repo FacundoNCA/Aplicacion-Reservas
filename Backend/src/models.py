@@ -8,9 +8,9 @@ class Clientes(db.Model):
     id_cliente = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100), nullable=False)
     apellido = db.Column(db.String(100), nullable=False)
-    direccion = db.Column(db.String(100)
-    email = db.Column(db.String(255), nullable=False)
+    email = db.Column(db.String(255), nullable=False, unique=True)
     telefono = db.Column(db.String(24), nullable=False)
+    contraseña = db.Column(db.Text, nullable=False)
 
 class Habitaciones(db.Model):
     __tablename__ = 'habitaciones'
@@ -26,13 +26,7 @@ class Reservas(db.Model):
     id_habitacion = db.Column(db.Integer, db.ForeignKey('habitaciones.id_habitacion'), nullable=False)
     fecha_llegada = db.Column(db.DateTime,  nullable=False)
     fecha_salida = db.Column(db.DateTime, nullable=False)
+    metodo_pago = db.Column(db.String(20))
+    monto = db.Column(db.Integer, nullable=False)
     pagado = db.Column(db.Boolean, default=False)
-
-    class Pago(db.Model):
-    __tablename__ = 'pago'
-    
-    id = db.Column(db.Integer, primary_key=True)
-    metodo_pago = db.Column(db.String(20), nullable=False)
-    monto = db.Column(db.DECIMAL(10, 2), nullable=False)
-    reserva_id = db.Column(db.Integer, db.ForeignKey('reserva.id', ondelete='CASCADE'), nullable=False)
 
