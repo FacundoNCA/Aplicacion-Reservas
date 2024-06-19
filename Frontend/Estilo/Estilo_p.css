@@ -1,6 +1,6 @@
 body {
     font-family: Perpetua, sans-serif;
-    margin: 0;
+    margin-top: 0;
     padding: 0;
     box-sizing: border-box;
     background-color:white;
@@ -38,12 +38,12 @@ p {
     text-align: center;
     margin: 10px;
   }
-  .service img {
+.service img {
     width: 50px; 
   }
-  .service p {
+.service p {
     font-size: 14px;
-  }
+}
 h2{
     text-align: center;
     margin: 20px;
@@ -54,3 +54,20 @@ nav #Inicio{
     border-radius: 5px;
     text-decoration: none;
 }
+footer {
+    background-color:rgb(201, 201, 201);
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+  }
+footer a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+} 
+footer p{
+    text-align: left;
+    font-size: 15px;
+}
+
+  

@@ -15,51 +15,51 @@ return render_template('Pagina_p.html', habitaciones=habitaciones_data)-->
             <h1><a id ="Inicio" href="Pagina_p.html">Bienvenidos al Hotel "Piña colada"</a></h1>
         </nav>
     </header>
-    
+
+  <main class="principio">
     <form id = "Info">
-        <h2>¿Donde estamos ubicados?</h2>
-        <p>Ubicado en el corazón de la costa, el Hotel "Piña colada" ofrece una experiencia inolvidable con vistas impresionantes del océano. Nuestras habitaciones están diseñadas para proporcionar el máximo confort y elegancia, con una decoración moderna y todas las comodidades del hogar. </p>
+      <h2>¿Donde estamos ubicados?</h2>
+      <p>Ubicado en el corazón de la costa, el Hotel "Piña colada" ofrece una experiencia inolvidable con vistas impresionantes del océano. Nuestras habitaciones están diseñadas para proporcionar el máximo confort y elegancia, con una decoración moderna y todas las comodidades del hogar. </p>
         
-        <h2>¿Que tipo de habitaciones ofrecemos?</h2>
-        <p>El Hotel "Piña colada" ofrece una variedad de habitaciones para satisfacer las necesidades de todos los huéspedes. Desde habitaciones estándar hasta familiares, tenemos algo para todos. Todas nuestras habitaciones están equipadas con televisores de pantalla plana, minibar, aire acondicionado y mucho más. </p>
+      <h2>¿Que tipo de habitaciones ofrecemos?</h2>
+      <p>El Hotel "Piña colada" ofrece una variedad de habitaciones para satisfacer las necesidades de todos los huéspedes. Desde habitaciones estándar hasta familiares, tenemos algo para todos. Todas nuestras habitaciones están equipadas con televisores de pantalla plana, minibar, aire acondicionado y mucho más. </p>
     </form>
     <form id = "Servicios">           
-        <h2>Nuestros servicios </h2>
-        <div class="service">
-            <img src="icono-piscina.png" alt="Piscina">
-            <p>Piscina al aire libre</p>
-          </div>
+      <h2>Nuestros servicios </h2>
+      <div class="service">
+        <img src="https://cdn-icons-png.flaticon.com/512/8/8406.png" alt="Piscina">
+        <p>Piscina al aire libre</p>
+      </div>
           
-          <div class="service">
-            <img src="icono-restaurante.png" alt="Restaurante">
-            <p>Restaurante en el lugar</p>
-          </div>
+      <div class="service">
+        <img src="https://th.bing.com/th/id/OIP.CyijH0J6X7I3YqUrqAtokAHaHa?w=512&h=512&rs=1&pid=ImgDetMain" alt="Restaurante">
+        <p>Restaurante en el lugar</p>
+      </div>
           
-          <div class="service">
-            <img src="icono-gimnasio.png" alt="Gimnasio">
-            <p>Gimnasio</p>
-          </div>
+      <div class="service">
+        <img src="https://static.vecteezy.com/system/resources/previews/000/425/345/original/weightlifting-icon-vector-illustration.jpg" alt="Gimnasio">
+        <p>Gimnasio</p>
+      </div>
           
-          <div class="service">
-            <img src="icono-spa.png" alt="Spa">
-            <p>Spa de servicio completo</p>
-          </div>
+      <div class="service">
+        <img src="https://static.vecteezy.com/system/resources/previews/015/306/126/original/aromatic-lotus-icon-outline-style-vector.jpg" alt="Spa">
+        <p>Spa de servicio completo</p>
+      </div>
           
-          <div class="service">
-            <img src="icono-estacionamiento.png" alt="Estacionamiento">
-            <p>Estacionamiento gratuito</p>
-          </div>
+      <div class="service">
+        <img src="https://th.bing.com/th/id/OIP.TSh8VkXuGwOZXRGbDywNWQHaHa?w=512&h=512&rs=1&pid=ImgDetMain" alt="Estacionamiento">
+        <p>Estacionamiento gratuito</p>
+      </div>
           
-          <div class="service">
-            <img src="https://th.bing.com/th/id/OIP.eEjaZuWuskUcDCI1tahrMgHaGM?rs=1&pid=ImgDetMain" alt="WiFi">
-            <p>WiFi gratis</p>
-          </div>
+      <div class="service">
+        <img src="https://th.bing.com/th/id/OIP.eEjaZuWuskUcDCI1tahrMgHaGM?rs=1&pid=ImgDetMain" alt="WiFi">
+        <p>WiFi gratis</p>
+      </div>
     </form>
 
-    <div>
-        <nav>
-            <a id = "Boton_r" boton ="reserva "href="Reservas.html">Reservas </a>
-        </nav>
+    <div class="buttons">
+      <a id="Boton_r" class="boton" href="Reservas.html">Reservas</a>
+      <a id="Boton_c" class="boton" href="Contacto.html">Contacto</a>
     </div>
 
     <p>
@@ -67,10 +67,18 @@ return render_template('Pagina_p.html', habitaciones=habitaciones_data)-->
         <!--Acá puedo mejorar con in script ese boton y se va distinto-->
     </p>
 
-    <div>
-        <nav>
-            <a id ="Boton_c" boton ="contacto "href="Contacto.html">Contacto </a>
-        </nav>
-    </div>
+ 
+  </main>  
+
 </body>
+<footer>
+  <div class="footer-selection"></div> 
+    <h4>Redes sociales</h4>
+    <ul>
+      <li><a href="(twiter)">Twitter</a></li>
+      <li><a href="(Facebook)">facebook</a></li>
+      <li><a href="(instagram)">instagram</a></li>
+    </ul>
+  </div>
+</footer>
 </html>
