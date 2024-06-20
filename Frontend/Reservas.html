@@ -12,16 +12,17 @@
         <h1> Reservas </h1> 
     </header>
 
-    <nav>
-        <a href="Contacto.html">Contactos</a>
-        <a href="Habitaciones_r.html">Acerca de habitaciones</a>
-        <a href="Pagina_p.html">Inicio</a>
-    </nav>
+    <div id="eleccion">
+        <ul>
+            <li><a href="Contacto.html">Contactos</a></li>
+            <li><a href="Habitaciones_r.html">Acerca de habitaciones</a></li>
+            <li><a href="Pagina_p.html">Inicio</a></li>
+        </ul>
+    </div>
     
 <div class="container" id="contact">
-
     <div class="form-container">
-        <form action="submit_form.php" method="post">
+        <form id="formulario" action="submit_form.php" method="post">
             <label for="name">* Nombres:</label>
             <input type="text" id="name" name="name" required>
             <br>
@@ -54,10 +55,27 @@
                 <input type="date" id="date" name="date" required>
             </div>
             <br>
-            <button type="submit">Enviar</button>
             
+            <button type="submit">Enviar</button>
 
-        </form>
+        </form> 
     </div>
 </body>
+
+<script>
+    document.getElementById("formulario").addEventListener("submit", function(event){
+        event.preventDefault();
+        alert("Formulario enviado");
+        window.location.href = "Pagina_p.html";
+    });
+
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach(function(navLink){
+        navLink.addEventListener("click", function(event){
+            event.preventDefault();
+            window.location.href = this.href;
+            });
+            });
+</script>
+
 </html>

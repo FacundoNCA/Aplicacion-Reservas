@@ -1,6 +1,6 @@
 body {
     font-family: Perpetua, sans-serif;
-    margin-top: 0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color:white;
@@ -8,7 +8,7 @@ body {
 header {
     background-color: rgb(208, 67, 67);
     color: white;
-    padding: 1px 0;
+    padding: 0x 0x;
     text-align: center;
 }
 nav{
@@ -36,7 +36,7 @@ p {
 .service {
     display: inline-block;
     text-align: center;
-    margin: 10px;
+    margin: 18px;
   }
 .service img {
     width: 50px; 

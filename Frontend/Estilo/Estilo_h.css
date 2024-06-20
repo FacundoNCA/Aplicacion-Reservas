@@ -1,0 +1,26 @@
+body {
+    font-family: Perpetua, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+header {
+    background-color: rgb(208, 67, 67);
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+header label {
+    display: block;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+header #fecha {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: right;
+    text-size-adjust: 0px;
+}
