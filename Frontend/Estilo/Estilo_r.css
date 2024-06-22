@@ -22,7 +22,6 @@ header {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 form {
     display: flex;
     flex-direction: column;
@@ -47,104 +46,113 @@ input[type="date"] {
     width: 220px;
 
 }
-button[type="submit"] {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #282727;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-} 
-    
-#eleccion,
-#elecion ul,
-#eleccion li,
-#eleccion a{ 
-    background-color: #282727;
-    color: white;
-    cursor: pointer;
-    list-style: none;
-    text-decoration: none;
-    text-align: center;
-    padding: 5px;
-  
-}
-#eleccion {
-    width: 100%;
-    border-right: relative;
-    border-left: hsl(from color h s l);
-}
-#elecion a{
-    line-height: 2;
-}
-#eleccion ul li {
-    background:#282727;
-    background: -moz-linear-gradient(#282727 0%, #282727 0%);
-    background: -webkit-gradient(linear,right bottom,right top ,left top, left bottom, color-stop(0%, #282727), color-stop(0%, #ececec));
-    background: -webkit-linear-gradient(#282727 0%,#282727 0%);
-    background: linear-gradient(#282727 0%, #282727 0%)
-}
-#eleccion ul li:hover {
-    background: #f0f0f0;
-    background: -moz-linear-gradient(#282727 0%, #282727 0%);
-    background: -webkit-gradient(linear, right bottom,right top,left top, left bottom, color-stop(0%, #f0f0f0), color-stop(0%, #e5e5e5));
-    background: -webkit-linear-gradient(#282727 0%, #282727 0%);
-    background: linear-gradient(#282727 0%, #ffff 0%)/*numeros de colores a usar*/
-}
-#eleccion ul li a {
-        font-size: 14px;
-        display: block;
-        color: #ffff;
-        border-top-left-radius: 10px solid #ececec;
-        border: right 100px; solid #ececec; ;
-        border-top: none;
-        
-}
 /* Media Queries para Responsividad */
 @media (max-width: 768px) {
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
     .form-container {
         padding: 20px;
-    }
-    input[type="date"] {
-        width: 100%;
-    }
-    input[type="date"] {
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        width: 170px;
-    
-    }
+}
 }
 
 @media (max-width: 600px) {
     header {
         font-size: 1.2em;
     }
-    nav {
-        padding: 5px 0;
-    }
-    nav a {
-        margin: 5px 0;
-    }
     .form-container {
         padding: 15px;
     }
-    button[type="submit"] {
-        padding: 10px;
+}
+nav {
+    background: #222;
+    padding: 5px 20px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0 ; 
+    margin: 0 ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; 
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .logo a:hover {
+    text-decoration: none;
+  }
+  .menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+  }
+  .item{
+    display: block;
+  }
+  .item.active{
+    display: block;
+  }
+
+  @media all and (min-width: 600px) {
+    .menu {
+        justify-content: center;
     }
-    input[type="date"] {
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        width: 100px;
-    
+    .logo {
+        flex: 1;
     }
+    .item{
+        display: block;
+    }
+  }
+
+  @media all and (min-width: 900px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
+  }
+  .button {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgb(208, 67, 67);
+    transform: scale(1.05);
+}
+
+.button:active {
+    background-color: white;
+}
+.button {
+    display: flex;
+    align-items: center;
 }

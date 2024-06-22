@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas de pag</title>
     <link rel="stylesheet" href="Estilo/Estilo_r.css">
+    <script src="/Frontend/JS/Scritp_r.js"></script>
 
 </head>
 <body>
+    <nav>
+        <ul class="menu">
+          <li class="logo"><a href="Pagina_p.html">Piña colada</a></li>
+          <li class="item"><a href="Pagina_p.html">Inicio</a></li>
+          <li class="item"><a href="Habitaciones_r.html">servicios</a></li>
+          <li class="item"><a href="Contacto.html">Contacto</a>
+          </li>
+
+        </ul>
+      </nav>
+
     <header>
         <h1> Reservas </h1> 
-    </header>
-
-    <div id="eleccion">
-        <ul>
-            <li><a href="Contacto.html">Contactos</a></li>
-            <li><a href="Habitaciones_r.html">Acerca de habitaciones</a></li>
-            <li><a href="Pagina_p.html">Inicio</a></li>
-        </ul>
-    </div>
+    </header> 
     
 <div class="container" id="contact">
     <div class="form-container">
-        <form id="formulario" action="submit_form.php" method="post">
+        <form id="formulario" action="/submit_form" method="post">
             <label for="name">* Nombres:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required >
             <br>
 
             <label for="surname">* Apellidos:</label>
@@ -37,10 +41,11 @@
 
             <label for="room">* Tipo de habitación:</label>
             <br>
-            <select id="room" name="room" required>
-            <option value="standard">Estándar</option>
-            <option value="suite">Suite</option>
-            <option value="family">Familiar</option>
+            <select id="room" name="room" required >
+                <option selected="select"></option>
+                <option value="standard">Estándar</option>
+                <option value="suite">Suite</option>
+                <option value="family">Familiar</option>
             </select>
             <br>
             
@@ -48,34 +53,23 @@
             <input type="tel" id="phone" name="phone">
             <br>
 
-            <div id="duracion">
-                <label for="date">* llegada:</label>
-                <input type="date" id="date" name="date" required>
-                <label for="date">* Salida:</label>
-                <input type="date" id="date" name="date" required>
+            <div id="duracion"></div>
+                
+                <label for="fecha_llegada">* llegada:</label>
+                <input type="date" id="fecha_llegada" name="fecha_llegada" required>
+                <br>
+                <label for="fecha_salida">* Salida:</label>
+                <input type="date" id="fecha_salida" name="fecha_salida" required >
+                <br>
+                <button class="button">Enviar</button>
+
             </div>
-            <br>
-            
-            <button type="submit">Enviar</button>
+    
 
         </form> 
     </div>
 </body>
 
-<script>
-    document.getElementById("formulario").addEventListener("submit", function(event){
-        event.preventDefault();
-        alert("Formulario enviado");
-        window.location.href = "Pagina_p.html";
-    });
 
-    const navLinks = document.querySelectorAll(".nav-link");
-    navLinks.forEach(function(navLink){
-        navLink.addEventListener("click", function(event){
-            event.preventDefault();
-            window.location.href = this.href;
-            });
-            });
-</script>
 
 </html>
