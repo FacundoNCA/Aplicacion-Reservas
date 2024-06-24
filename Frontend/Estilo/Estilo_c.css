@@ -1,7 +1,8 @@
-h1 {
+h2 {
     color: #333;
     font-size: 24px;
     margin-bottom: 20px;
+    text-align: center;
 }
 body {
     font-family: Perpetua, sans-serif;
@@ -28,4 +29,68 @@ form h2 {
     color: #333;
     font-size: 24px;
     margin-bottom: 20px;
+}
+nav {
+    background: #222;
+    padding: 5px 20px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0 ; 
+    margin: 0 ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; 
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .logo a:hover {
+    text-decoration: none;
+  }
+  .menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+}
+p{
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+}
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+    header p {
+        font-size: 16px;
+    }
+    main {
+        padding: 10px;
+    }
+    p {
+        font-size: 18px;
+    }
+}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    main {
+        padding: 5px;
+    }
+
+    p {
+        font-size: 16px;
+    }
 }
