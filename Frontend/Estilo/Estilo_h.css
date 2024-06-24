@@ -12,6 +12,34 @@ header {
     padding: 15px 0;
     text-align: center;
 }
+
+nav {
+    background: #222;
+    padding: 5px 20px;
+    text-align: right; /* Alinea el contenido a la derecha dentro del nav */
+    height: 40px; /* Aumenta la altura del nav */
+    line-height: 40px; /* Ajusta la altura de línea para centrar verticalmente */
+}
+
+nav ul {
+    list-style-type: none; /* Elimina los puntos de lista */
+    padding: 0;
+    margin: 0;
+    
+}
+
+nav li {
+    display: inline-block; /* Para que los elementos de la lista se muestren en línea y centrados */
+    margin-left: 10px; /* Espacio entre los elementos */
+}
+
+nav a {
+    color: white; /* Color del texto enlaces */
+    text-decoration: none; /* Quita el subrayado por defecto de los enlaces */
+    font-size: 16px; /* Tamaño de fuente de los enlaces */
+}
+
+
 header label {
     display: block;
     margin-top: 5px;
