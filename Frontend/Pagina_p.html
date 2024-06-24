@@ -14,6 +14,7 @@ return render_template('Pagina_p.html', habitaciones=habitaciones_data)-->
         <nav id="Inicio">
             <h1><a id ="Inicio" href="Pagina_p.html">Bienvenidos al Hotel "Piña colada"</a></h1>
         </nav>
+        <a href="login.html"><button id="login-btn">Iniciar Sesión</button></a>
     </header>
 
   <main class="principio">
@@ -70,14 +71,29 @@ return render_template('Pagina_p.html', habitaciones=habitaciones_data)-->
   </main>  
 
 </body>
+
 <footer>
-  <div class="footer-selection"></div> 
-    <h4>Redes sociales</h4>
-    <ul>
-      <li><a href="(twiter)">Twitter</a></li>
-      <li><a href="(Facebook)">facebook</a></li>
-      <li><a href="(instagram)">instagram</a></li>
-    </ul>
+  <div class="footer-selection">
+      <h4>Redes sociales</h4>
+      <ul>
+          <li>
+              <a href="(twiter)">
+                  <img class="footer-image" src="https://cdn.icon-icons.com/icons2/1211/PNG/512/1491579583-yumminkysocialmedia02_83111.png" alt="Twitter">
+                  <span class="social-name">Twitter</span>
+              </a>
+          </li>
+          <li>
+              <a href="(Facebook)">
+                  <img class="footer-image" src="https://cdn.icon-icons.com/icons2/836/PNG/512/Facebook_icon-icons.com_66805.png" alt="Facebook">
+                  <span class="social-name">Facebook</span>
+              </a>
+          </li>
+          <li>
+              <a href="(instagram)">
+                  <img class="footer-image" src="https://cdn.icon-icons.com/icons2/1584/PNG/512/3721672-instagram_108066.png" alt="Instagram">
+                  <span class="social-name">Instagram</span>
+              </a>
+          </li>
+      </ul>
   </div>
 </footer>
-</html>

@@ -3,31 +3,28 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color:white;
+    background-color: white;
 }
+
 header {
     background-color: rgb(208, 67, 67);
     color: white;
-    padding: 10x 0x;
+    padding: 10px 0;
     text-align: center;
 }
-nav{
+
+nav {
     text-align: center;
     padding: 10px 0;
 }
+
 p {
     font-size: 20px;
     margin: 35px;
 }
-#Boton_r{
-    background-color: #282727;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-}
-#Boton_c{
+
+#Boton_r,
+#Boton_c {
     background-color: #282727;
     color: white;
     padding: 10px 20px;
@@ -36,47 +33,56 @@ p {
     text-align: center;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 .service {
     display: grid;
     text-align: center;
     margin: 18px;
 }
+
 .service img {
     width: 50px;
-  }
+}
+
 .service figcaption {
     font-size: 14px;
     margin: 10px;
-
 }
-h2{
+
+h2 {
     text-align: center;
     margin: 20px;
 }
-nav #Inicio{
+
+nav #Inicio {
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
 }
+
 footer {
-    background-color:rgb(201, 201, 201);
+    background-color: rgb(201, 201, 201);
     color: #fff;
     padding: 20px;
     text-align: left;
 }
+
 footer a {
     color: #fff;
     text-decoration: none;
     text-align: center;
-} 
-footer p{
+}
+
+footer p {
     text-align: left;
     font-size: 15px;
 }
+
 ul {
     list-style-type: none;
 }
+
 @media (max-width: 600px) {
     p {
         font-size: 16px;
@@ -88,12 +94,12 @@ ul {
     }
     .service img {
         width: 40px;
-
     }
     .service p {
         font-size: 12px;
     }
-    #Boton_r, #Boton_c {
+    #Boton_r,
+    #Boton_c {
         display: block;
         margin: 10px auto;
         width: 80%;
@@ -106,6 +112,7 @@ ul {
         align-items: center;
     }
 }
+
 @media (min-width: 601px) and (max-width: 1024px) {
     p {
         font-size: 18px;
@@ -127,4 +134,15 @@ ul {
         flex-wrap: wrap;
         justify-content: space-around;
     }
+}
+
+/* Estilos adicionales para las imágenes pequeñas en el footer */
+.footer-image {
+    width: 30px; 
+    height: auto;
+    margin-right: 5px; 
+}
+
+.social-name {
+    color: black; 
 }

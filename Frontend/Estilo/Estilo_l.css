@@ -1,0 +1,165 @@
+body {
+    font-family: Perpetua, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:white;
+}
+
+header {
+    background-color: rgb(208, 67, 67);
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    header {
+        font-size: 1.2em;
+    }
+    .form-container {
+        padding: 15px;
+    }
+}
+nav {
+    background: #222;
+    padding: 5px 20px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0 ; 
+    margin: 0 ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; 
+  }
+  
+  @media all and (min-width: 600px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .item{
+        display: block;
+    }
+  }
+
+  @media all and (min-width: 900px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .button {
+        order: 2;
+    }
+    .menu li {
+        padding: 15px 10px;
+    }
+    .menu li.button {
+        padding-right: 0;
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .logo a:hover {
+    text-decoration: none;
+  }
+  .menu li {
+    font-size: 16px;
+    padding: 15px 5px;
+    white-space: nowrap;
+  }
+  .item{
+    display: block;
+  }
+  .item.active{
+    display: block;
+  }
+
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid rgb(208, 67, 67);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form label {
+    margin-bottom: 5px;
+}
+
+#login-form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#login-form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background-color: rgb(208, 67, 67)    ;
+}
+
+#login-message {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Alineación del botón de inicio de sesión en el header */
+.menu {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos alrededor */
+}
+
+.item-right {
+    margin-left: auto; /* Empuja el elemento hacia la derecha */
+}
+
+.item-right .button {
+    padding: 10px 20px;
+    background-color: black;
+    color: rgb(208, 67, 67);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.item-right .button:hover {
+    background-color: rgb(208, 67, 67);
+}
