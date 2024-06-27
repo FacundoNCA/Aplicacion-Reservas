@@ -6,15 +6,20 @@
     <link rel="stylesheet" href="Estilo/Estilo_h.css">
 </head>
 <body>
+    <nav>
+        <ul class="menu">
+            <li class="item"><a href="login.html">Registrarse</a></li>
+        </ul>
+    </nav>
     <header>
         <h3>Hotel "Piña colada"</h3>
         <label type="text">Una experiencia inolvidable</label>
         <p id="fecha"></p>
-        <a href="login.html"><button id="login-btn">Iniciar Sesión</button></a>
+        
     </header>
     <h1>Habitaciones</h1>
 
-    <fomr>
+    <form>
         <h2>Tipo Estándar</h2>
         <div class="Habitacion Estandar">
             <h3>Habitación Estándar</h3>
@@ -35,11 +40,11 @@
             <p>La habitación familiar cuanta con tres camas ...</p>
             <p>Precio por noche: $50.000 </p>
         </div>
-    </fomr>
+    </form>
+
+    <!-- Script para mostrar la fecha actual -->
+    <script>
+        document.getElementById("fecha").textContent = new Date().toLocaleDateString();
+    </script>
 </body>
-
-
-<script>
-    document.getElementById("fecha").textContent = new Date().toLocaleDateString();
-</script>
 </html>
