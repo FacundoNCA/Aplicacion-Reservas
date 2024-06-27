@@ -1,148 +1,222 @@
+/* Estilo/Estilo_p.css */
+
+/* Estilo global */
 body {
-    font-family: Perpetua, sans-serif;
+    font-family: perpetua sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: white;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-header {
-    background-color: rgb(208, 67, 67);
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
+/* Estilo del menú de navegación */
 nav {
-    text-align: center;
+    background-color: #333;
     padding: 10px 0;
 }
 
-p {
-    font-size: 20px;
-    margin: 35px;
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size:smaller;
 }
 
-#Boton_r,
-#Boton_c {
-    background-color: #282727;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    color: #fff;
     text-decoration: none;
+    font-weight: bold;
+}
+
+.menu .logo a {
+    font-size: 24px;
+}
+
+/* Estilo del botón de iniciar sesión */
+#login-btn {
+    background-color: #fff;
+    color: rgb(226, 71, 71);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#login-btn:hover {
+    background-color: #ccc;
+}
+
+/* Estilo del encabezado */
+header {
+    background: url('https://th.bing.com/th/id/R.cfbe6a62f9752456e4d0bd577a62ec35?rik=zAbB9uNobtU9pw&pid=ImgRaw&r=0') no-repeat center center/cover;
+    color: #fff;
+    padding: 200px 0;
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
+/* Estilo del contenido principal */
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+main h2 {
+    color: rgb(226, 71, 71);
+}
+
+main p {
+    line-height: 1.6;
+}
+
+/* Estilo de los servicios */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .service {
-    display: grid;
+    width: 30%;
+    margin: 10px 0;
     text-align: center;
-    margin: 18px;
 }
 
 .service img {
-    width: 50px;
+    width: 100px;
+    height: 85px;
+    object-fit: cover;
 }
 
 .service figcaption {
-    font-size: 14px;
-    margin: 10px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-h2 {
+/* Estilo de los botones */
+.buttons {
     text-align: center;
-    margin: 20px;
+    margin: 20px 0;
 }
 
-nav #Inicio {
-    color: white;
+.boton {
+    display: inline-block;
+    background-color: rgb(226, 71, 71);
+    color: #fff;
     padding: 10px 20px;
+    text-decoration: none;
     border-radius: 5px;
-    text-decoration: none;
 }
 
+.boton:hover {
+    background-color: #333;
+}
+
+/* Estilo del pie de página */
 footer {
-    background-color: rgb(201, 201, 201);
+    background-color: #333;
     color: #fff;
-    padding: 20px;
-    text-align: left;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
+    padding: 20px 0;
     text-align: center;
 }
 
-footer p {
-    text-align: left;
-    font-size: 15px;
+.footer-selection h4 {
+    margin-top: 0;
 }
 
-ul {
-    list-style-type: none;
+.footer-selection ul {
+    list-style: none;
+    padding: 0;
 }
 
-@media (max-width: 600px) {
-    p {
-        font-size: 16px;
-        margin: 20px;
-    }
-    .service {
-        display: block;
-        margin: 10px auto;
-    }
-    .service img {
-        width: 40px;
-    }
-    .service p {
-        font-size: 12px;
-    }
-    #Boton_r,
-    #Boton_c {
-        display: block;
-        margin: 10px auto;
-        width: 80%;
-    }
-    h2 {
-        font-size: 18px;
-    }
-    .form-container {
-        flex-direction: column;
-        align-items: center;
-    }
+.footer-selection li {
+    display: inline;
+    margin: 0 10px;
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
-    p {
-        font-size: 18px;
-        margin: 30px;
-    }
-    .service {
-        display: inline-block;
-        width: 45%;
-        margin: 15px 2.5%;
-    }
-    .service img {
-        width: 45px;
-    }
-    .service p {
-        font-size: 13px;
-    }
-    .form-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-}
-
-/* Estilos adicionales para las imágenes pequeñas en el footer */
 .footer-image {
-    width: 30px; 
-    height: auto;
-    margin-right: 5px; 
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
 }
 
 .social-name {
-    color: black; 
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+span {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Media Queries para diseño responsivo */
+
+/* Pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    .service {
+        width: 45%;
+    }
+}
+
+/* Pantallas extra pequeñas */
+@media (max-width: 480px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .service {
+        width: 100%;
+    }
+
+    #login-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .boton {
+        width: 100%;
+        text-align: center;
+    }
 }
