@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="Estilo/Estilo_l.css">
-   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -23,7 +22,7 @@
         <h1>Iniciar Sesión</h1>
     </header>
 
-    <!-- Formulario de Login -->
+    <!---------- Formulario de Login ---------->
     <div class="login-container">
         <h2>Iniciar Sesión</h2>
         <form id="login-form">
@@ -33,14 +32,18 @@
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" required><br><br>
             
-            <!-- Botón con icono -->
+            
             <button type="submit" class="login-button">
                 <span class="button-icon"><i class="fas fa-sign-in-alt"></i></span> Iniciar Sesión
             </button>
         </form>
         <div id="login-message"></div>
+
+        <div class="register-message">
+            <p><a href="Registro.html">¿No tienes cuenta? Regístrate aquí</a></p>
+        </div>
     </div>
 
-    <script src="/Frontend/JS/Scritp_r.js" defer></script>
+    <script src="/Frontend/JS/Login.js" defer></script>
 </body>
 </html>

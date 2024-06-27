@@ -139,6 +139,10 @@ nav {
     margin-top: 20px;
     text-align: center;
 }
+.register-message a {
+    color: black;
+}
+
 
 /* Alineación del botón de inicio de sesión en el header */
 .menu {
