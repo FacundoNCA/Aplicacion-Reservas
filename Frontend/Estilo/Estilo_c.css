@@ -1,95 +1,120 @@
-h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-}
 body {
-    font-family: Perpetua, sans-serif;
+    font-family: perpetua, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color:white;
-}
-header {
-    background-color: rgb(208, 67, 67);
-    color: white;
-    padding: 1px 0;
-    text-align: center;
-}   
-a{
-    text-decoration: none;
-    color: white;
-}
-form{
-    text-align: center;
-    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
 }
 nav {
-    background: #222;
-    padding: 5px 20px;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.menu {
-    width: 100%;
-}
-.logo {
-    margin-left: auto; /* Mueve el logo al extremo derecho */
-}
-a {
-    color: white;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-.logo a:hover {
-    text-decoration: none;
-}
-.menu li {
-    font-size: 16px;
-    padding: 15px 5px;
-    white-space: nowrap;
-}
-p{
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
     text-align: center;
-    font-size: 20px;
+}
+nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav .menu li {
+    display: inline;
+    margin: 0 15px;
+}
+nav .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav .menu .logo a {
+    font-size: 1.5em;
+}
+header {
+    background: url('https://th.bing.com/th/id/R.5a10df69e8459571e4276b0eb85c02d5?rik=QG%2b6AYdt2lJdYA&pid=ImgRaw&r=0') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    text-decoration: none;
+}
+header h1 {
+    margin: 0;
+    font-size: 3em;
+
+}
+header p {
+    font-size: 1.2em;;
+}
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+form {
+    margin: 20px 0;
+}
+form h2 {
     color: #333;
+    margin-bottom: 10px;
+}
+form p {
+    margin: 5px 0;
+}
+button#login-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+button#login-btn:hover {
+    background-color: #555;
 }
 
 @media (max-width: 768px) {
+    nav .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav .menu li {
+        display: block;
+        margin: 10px 0;
+    }
+    header {
+        padding: 60px 0;
+    }
     header h1 {
-        font-size: 28px;
+        font-size: 2em;
     }
     header p {
-        font-size: 16px;
+        font-size: 1em;
     }
     main {
-        padding: 10px;
-    }
-    p {
-        font-size: 18px;
+        padding: 15px;
+        max-width: 90%;
     }
 }
 
 @media (max-width: 480px) {
+    header {
+        padding: 40px 0;
+    }
     header h1 {
-        font-size: 24px;
+        font-size: 1.5em;
     }
     header p {
-        font-size: 14px;
+        font-size: 0.9em;
+    }
+    nav .menu li {
+        margin: 5px 0;
     }
     main {
-        padding: 5px;
+        padding: 10px;
+        max-width: 95%;
     }
-    p {
-        font-size: 16px;
+    button#login-btn {
+        width: 100%;
+        padding: 10px;
     }
 }
