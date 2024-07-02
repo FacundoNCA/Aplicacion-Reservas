@@ -25,17 +25,17 @@ document.getElementById('register-form').addEventListener('submit', function(eve
         if (!response.ok) {
             throw new Error('Error en el registro');
         }
-        return response.json(); // Parsear la respuesta JSON
+        return response.json(); 
     })
     .then(data => {
-        // Manejar la respuesta del backend
+     
         console.log('Registro exitoso:', data.message);
-        // Redirigir a Reservas.html si todo sale bien
+       
         window.location.href = '/Reservas.html';
     })
     .catch(error => {
         console.error('Error:', error);
-        // Manejar errores de registro aquí
+    
         document.getElementById('register-message').innerText = "Error en el registro. Por favor, inténtelo nuevamente.";
     });
 });
