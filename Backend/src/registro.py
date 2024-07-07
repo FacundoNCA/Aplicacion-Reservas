@@ -1,12 +1,12 @@
-from flask import Flask, request, jsonify, redirect, url_for, render_template, session
+from flask import Flask, request, jsonify, render_template, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-import jwt
 import os
 
-app = Flask(__name__)
-CORS(app)  
+app = Flask(__name__, template_folder='Aplicacion-Reservas/Frontend')  # Define el directorio de plantillas
+CORS(app)
 
+# Configuración de la base de datos PostgreSQL
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://adrian:12345@localhost/usuarios'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = os.urandom(24)
@@ -14,6 +14,7 @@ db = SQLAlchemy(app)
 
 # Modelo de Usuario
 class Usuario(db.Model):
+    __tablename__ = 'credenciales'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     contrasena = db.Column(db.String(120), nullable=False)
@@ -34,8 +35,8 @@ def register():
     db.session.add(nuevo_usuario)
     db.session.commit()
 
-    # Redirigir a la página de reservas si el registro es exitoso
-    return jsonify({'message': 'Registro exitoso'}), 200
+    # Redirigir a la página de registro si el registro es exitoso
+    return jsonify({'message': 'Registro exitoso', 'redirect_url': '/Registro.html'}), 200
 
 # Ruta para el inicio de sesión de usuarios
 @app.route('/auth/login', methods=['POST'])
@@ -53,10 +54,15 @@ def login():
     else:
         return jsonify({'message': 'Correo o contraseña incorrectos'}), 401
 
-# Ruta para la página principal
+# Ruta para la página principal (Pagina_p.html)
 @app.route('/')
 def index():
-    return render_template('index1.html')
+    return render_template('Pagina_p.html')
+
+# Ruta para Registro.html
+@app.route('/Registro.html')
+def registro():
+    return render_template('Registro.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
