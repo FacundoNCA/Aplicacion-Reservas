@@ -4,51 +4,86 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: white;
-}
-
-header {
-    background-color: rgb(208, 67, 67);
-    color: white;
-    padding: 15px 0;
     text-align: center;
 }
 
+header {
+    background: url('https://th.bing.com/th/id/OIP.yt3l8OZVnn8yym8pW8VDTgHaE8?rs=1&pid=ImgDetMain') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 100px 0;
+    position: relative; /* Añadido para permitir posicionamiento absoluto de hijos */
+    text-align: center;
+}
+
+#fecha {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-style: italic;
+}
+
 nav {
-    background: #222;
-    padding: 5px 20px;
-    text-align: right; /* Alinea el contenido a la derecha dentro del nav */
-    height: 40px; /* Aumenta la altura del nav */
-    line-height: 40px; /* Ajusta la altura de línea para centrar verticalmente */
+    background-color: #333;
+    padding: 10px;
 }
 
-nav ul {
-    list-style-type: none; /* Elimina los puntos de lista */
-    padding: 0;
+.menu {
+    list-style-type: none;
     margin: 0;
-    
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav li {
-    display: inline-block; /* Para que los elementos de la lista se muestren en línea y centrados */
-    margin-left: 10px; /* Espacio entre los elementos */
+.logo a, .item a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-nav a {
-    color: white; /* Color del texto enlaces */
-    text-decoration: none; /* Quita el subrayado por defecto de los enlaces */
-    font-size: 16px; /* Tamaño de fuente de los enlaces */
+h1, h2 {
+    color: #333;
 }
 
-
-header label {
-    display: block;
-    margin-top: 5px;
-    font-size: 16px;
+.habitacion {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+    max-width: 500px;
 }
 
-header #fecha {
-    margin-top: 10px;
-    font-size: 14px;
-    text-align: right;
-    text-size-adjust: 0px;
+.habitacion h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .item {
+        margin: 10px 0;
+    }
+
+    .habitacion {
+        width: 90%;
+    }
+
+    #fecha {
+        top: 5px;
+        right: 5px;
+        padding: 3px 5px;
+    }
 }
