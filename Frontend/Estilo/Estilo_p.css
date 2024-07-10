@@ -25,13 +25,13 @@ nav {
 .menu a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
 }
 .menu .logo a {
     font-size: 24px;
 }
 #login-btn {
-    background-color: #fff;
+    background-color: #ccc;
+    font-family: perpetua , sans-serif;
     color: rgb(226, 71, 71);
     border: none;
     padding: 10px 20px;
@@ -43,6 +43,7 @@ nav {
 }
 header {
     background: url('https://th.bing.com/th/id/R.cfbe6a62f9752456e4d0bd577a62ec35?rik=zAbB9uNobtU9pw&pid=ImgRaw&r=0') no-repeat center center/cover;
+
     color: #fff;
     padding: 200px 0;
     text-align: center;
