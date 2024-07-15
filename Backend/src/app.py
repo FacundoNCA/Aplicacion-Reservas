@@ -128,7 +128,7 @@ def get_reservasByCliente():
     try:
         authorization_header = request.headers.get('Authorization')
         if not authorization_header:
-            return jsonify({"message": "missing authorization header"}), 401
+            return jsonify({"message": "Falta token de autenticación"}), 401
         
         token = request.headers['Authorization'].split(' ')[1]
         usuario = jwt.decode(token, SECRET_KEY, algorithms="HS256")
