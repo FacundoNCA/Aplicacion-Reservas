@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas de pag</title>
     <link rel="stylesheet" href="Estilo/Estilo_r.css">
-    <script src="/Frontend/JS/Scritp_r.js"></script>
+    <script src="./JS/Reservas.js"></script>
 
 </head>
 <body>
@@ -27,23 +27,18 @@
 <div class="container" id="contact">
     <div class="form-container">
         <form id="formulario" action="/submit_form" method="post">
-            <label for="name">* Nombres:</label>
-            <input type="text" id="name" name="name" required >
-            <br>
 
-            <label for="surname">* Apellidos:</label>
-            <input type="text" id="surname" name="surname">
-            <br>
-
-            <label for="email">* Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
-            <br>
+            <!-- <select id="pay_method" name="pay_method" required >
+                <option value="efectivo">Efectivo</option>
+                <option value="debito">Debito</option>
+                <option value="credito">Credito</option>
+            </select> -->
 
             <label for="room">* Tipo de habitación:</label>
             <br>
             <select id="room" name="room" required >
                 <option selected="select"></option>
-                <option value="standard">Estándar</option>
+                <option value="standard">standard</option>
                 <option value="suite">Suite</option>
                 <option value="family">Familiar</option>
             </select>

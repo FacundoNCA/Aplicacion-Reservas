@@ -58,9 +58,9 @@ def register_user():
         nuevo_cliente = Clientes( nombre=nombre, apellido=apellido, email=email, contraseña=contraseña, telefono=telefono )
         db.session.add(nuevo_cliente)
         db.session.commit()
-        return jsonify({ "succecs": "ok", "user": "created" }), 201
+        return jsonify({ "succecs": True, "user": "created" }), 201
     else:
-        return jsonify({ "succecs": "error", "user": "already exist" })
+        return jsonify({ "succecs": False, "user": "already exist" })
 
     
 
@@ -199,9 +199,9 @@ def crear_reserva():
         habitacion.disponible = False
         db.session.commit()
 
-        return f"Hola { cliente.nombre } reserva hecha en la habitacion { id_habitacion }"
+        return jsonify({ "succes": True, "room": id_habitacion }), 200
     else:
-        return "No hay habitaciones disponibles"
+        return jsonify({ "succes": False, "room": habitacion }), 503
 
 @app.route("/reservas/<id_reserva>", methods=["PUT"])
 def pagar_reserva(id_reserva):
