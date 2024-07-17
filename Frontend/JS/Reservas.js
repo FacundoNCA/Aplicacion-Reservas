@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // console.log(parseDate(fechaSalida))
 
+     
+
         fetch('http://127.0.0.1:5000/reservas', {
             method: 'POST',
             headers: {
@@ -50,8 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log(data)
         })
         .catch(error => {
-            console.error('Error:', error);
-            document.getElementById('login-message').innerText = "Error en el inicio de sesión. Por favor, inténtelo nuevamente.";
+            console.log(error)
         });
         });
 });
