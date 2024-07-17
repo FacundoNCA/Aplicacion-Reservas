@@ -7,26 +7,34 @@ body {
 }
 nav {
     background-color: #333;
-    color: #fff;
     padding: 10px 0;
-    text-align: center;
 }
-nav .menu {
-    list-style: none;
+
+.menu {
+    list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size:smaller;
 }
-nav .menu li {
-    display: inline;
-    margin: 0 15px;
+
+.menu li {
+    margin: 0 20px;
 }
-nav .menu a {
-    color: #fff;
+
+.menu .logo a{
+    font-size: 24px;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
 }
-nav .menu .logo a {
-    font-size: 1.5em;
+
+.menu .item a, #login-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
 }
 header {
     background: url('https://th.bing.com/th/id/R.5a10df69e8459571e4276b0eb85c02d5?rik=QG%2b6AYdt2lJdYA&pid=ImgRaw&r=0') no-repeat center center/cover;
@@ -66,6 +74,7 @@ button#login-btn {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 5px;
 }
 button#login-btn:hover {
     background-color: #555;

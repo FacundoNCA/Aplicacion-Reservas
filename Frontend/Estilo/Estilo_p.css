@@ -30,16 +30,17 @@ nav {
     font-size: 24px;
 }
 #login-btn {
-    background-color: #ccc;
-    font-family: perpetua , sans-serif;
-    color: rgb(226, 71, 71);
+    background-color:#333;
+    color: #fff ;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    font-family: perpetua, sans-serif;
+    font-size: 1.5em;
 }
 #login-btn:hover {
-    background-color: #ccc;
+    background-color: #555;
 }
 header {
     background: url('https://th.bing.com/th/id/R.cfbe6a62f9752456e4d0bd577a62ec35?rik=zAbB9uNobtU9pw&pid=ImgRaw&r=0') no-repeat center center/cover;
