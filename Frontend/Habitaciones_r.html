@@ -2,17 +2,22 @@
 <html>
 <head>
     <title>Habitaciones</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="Estilo/Estilo_h.css">
 </head>
 <body>
     <nav>
         <ul class="menu">
-            <li class="logo"><a href="Pagina_p.html">Piña colada</a></li>
-            <li class="item"><a href="Registro.html">Registro</a></li>
-            <li class="item"><a href="login.html">Registrarse</a></li>
+          <li class="logo"><a href="Pagina_p.html">Piña colada</a></li>
+          <li class="item"><a href="Pagina_p.html">Inicio</a></li>
+          <li class="item"><a href="Habitaciones_r.html">Habitaciones</a></li>
+          <li class="item"><a href="Reservas.html">Reservas</a></li>
+          <li class="item"><a href="Contacto.html">Contacto</a></li>
+          <a href="login.html"><button class="login-btn" id="login-btn">Iniciar Sesión</button></a>
+          <button class="login-btn" id="logout-btn" style="display: none;">Cerrar sesion</button>
         </ul>
-    </nav>
+      </nav>
     <header>
         <h3>Hotel "Piña colada"</h3>
         <p>Una experiencia inolvidable</p>
@@ -44,9 +49,27 @@
         </div>
     </section>
 
-    <!-- Script para mostrar la fecha actual -->
-    <script>
-        document.getElementById("fecha").textContent = new Date().toLocaleDateString();
+
+
+    <script type="module">
+
+    document.getElementById("fecha").textContent = new Date().toLocaleDateString();
+
+
+    import {closeSession, isAuth} from './JS/sessionHandle.js'
+  
+    
+  
+    if (isAuth()) {
+      const loginButton = document.getElementById('login-btn')
+      const logoutButton = document.getElementById('logout-btn')
+    
+      loginButton.style.display = 'none';
+      logoutButton.style.display = 'block'
+      logoutButton.onclick = closeSession;
+    }
+  
+  
     </script>
 </body>
 </html>

@@ -1,9 +1,8 @@
-<!--Esto entra en el app.py con los html en la carpeta template 
-return render_template('Pagina_p.html', habitaciones=habitaciones_data)-->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Junte de todo </title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Estilo/Estilo_p.css">
@@ -17,7 +16,8 @@ return render_template('Pagina_p.html', habitaciones=habitaciones_data)-->
       <li class="item"><a href="Habitaciones_r.html">Habitaciones</a></li>
       <li class="item"><a href="Reservas.html">Reservas</a></li>
       <li class="item"><a href="Contacto.html">Contacto</a></li>
-      <li class="item"><a href="login.html"><button id="login-btn">Iniciar Sesión</button></a></li>
+      <a href="login.html"><button class="login-btn" id="login-btn">Iniciar Sesión</button></a>
+      <button class="login-btn" id="logout-btn" style="display: none;">Cerrar sesion</button>
     </ul>
   </nav>
   
@@ -106,4 +106,22 @@ return render_template('Pagina_p.html', habitaciones=habitaciones_data)-->
         </li>
       </ul>
   </div>
+
+  <script type="module">
+
+  import {closeSession, isAuth} from './JS/sessionHandle.js'
+
+  
+
+  if (isAuth()) {
+    const loginButton = document.getElementById('login-btn')
+    const logoutButton = document.getElementById('logout-btn')
+  
+    loginButton.style.display = 'none';
+    logoutButton.style.display = 'block'
+    logoutButton.onclick = closeSession;
+  }
+
+
+  </script>
 </footer>

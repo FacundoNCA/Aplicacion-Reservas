@@ -32,7 +32,7 @@ document.getElementById('register-form').addEventListener('submit', function(eve
     .then(response => response.json())
     .then(data => {
         sessionStorage.setItem('authToken', data.token);;
-        window.location.href = 'Reservas.html';
+        window.history.back()
     })
     .catch(error => {
         console.error('Error:', error);
