@@ -11,6 +11,8 @@ class Clientes(db.Model):
     telefono = db.Column(db.String(24), nullable=False)
     contraseña = db.Column(db.Text, nullable=False)
 
+    reservas = db.relationship('Reservas', backref='cliente', cascade='all, delete-orphan', passive_deletes=True)
+
 class Habitaciones(db.Model):
     __tablename__ = 'habitaciones'
     id_habitacion = db.Column(db.Integer, primary_key=True)
@@ -21,11 +23,10 @@ class Habitaciones(db.Model):
 class Reservas(db.Model):
     __tablename__ = 'reservas'
     id_reserva = db.Column(db.Integer, primary_key=True)
-    id_cliente = db.Column(db.Integer, db.ForeignKey('clientes.id_cliente'), nullable=False)
+    id_cliente = db.Column(db.Integer, db.ForeignKey('clientes.id_cliente', ondelete='CASCADE'), nullable=False)
     id_habitacion = db.Column(db.Integer, db.ForeignKey('habitaciones.id_habitacion'), nullable=False)
-    fecha_llegada = db.Column(db.DateTime,  nullable=False)
+    fecha_llegada = db.Column(db.DateTime, nullable=False)
     fecha_salida = db.Column(db.DateTime, nullable=False)
     metodo_pago = db.Column(db.String(20))
     monto = db.Column(db.Integer, nullable=False)
     pagado = db.Column(db.Boolean, default=False)
-

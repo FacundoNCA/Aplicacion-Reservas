@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_migrate import Migrate
 from models import db, Habitaciones, Clientes, Reservas  # Eliminado Credenciales
 from flask_cors import CORS
 from jwt import exceptions
@@ -14,6 +15,7 @@ CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@127.0.0.1:5432/app_reservas'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = "aguanteboca"
+migrate = Migrate(app, db)
 
 SECRET_KEY = app.config['SECRET_KEY']
 
@@ -55,9 +57,44 @@ def register_user():
         nuevo_cliente = Clientes(nombre=nombre, apellido=apellido, email=email, contraseña=contraseña, telefono=telefono)
         db.session.add(nuevo_cliente)
         db.session.commit()
-        return jsonify({"succes": "ok", "user": "created"}), 201
+
+        cliente = Clientes.query.filter_by(email=email).first()
+        tokenPayload = {
+            "id_cliente": cliente.id_cliente,
+            "nombre": cliente.nombre,
+            "apellido": cliente.apellido,
+            "email": cliente.email,
+            "contraseña": cliente.contraseña,
+        }
+        encoded = jwt.encode(tokenPayload, SECRET_KEY, algorithm="HS256")
+        return jsonify({"succes": True, "token": encoded}), 200
     else:
-        return jsonify({"succes": "error", "user": "already exist"}), 400
+        return jsonify({"succes": False, "user": "already exist"}), 400
+    
+@app.route("/auth/delete", methods=["DELETE"])
+def delete_user():
+    try:
+        authorization_header = request.headers.get('Authorization')
+        if not authorization_header:
+            return jsonify({"message": "missing authorization header"}), 401
+
+        token = request.headers['Authorization'].split(' ')[1]
+        usuario = jwt.decode(token, SECRET_KEY, algorithms="HS256")
+        id_cliente = usuario["id_cliente"]
+    except exceptions.DecodeError:
+        return jsonify({"message": "invalid token"})
+    
+    cliente = Clientes.query.filter_by(id_cliente=id_cliente).first()
+
+    if cliente:
+        db.session.delete(cliente)
+        db.session.commit()
+        return jsonify({"succes": True, "user": "deleted"}), 200
+    else:
+        return jsonify({"succes": False, "user": "client not found"}), 404
+
+
+
 
 # ** RUTAS PARA MANEJO DE HABITACIONES -------------------------------------------------------------------------------
 
