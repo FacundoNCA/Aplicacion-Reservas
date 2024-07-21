@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>client</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+    <h1> Tus reservas </h1>
+
+
+    <div id="container" class="row g-4" style="text-align: center;">
+
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        
+        function parse_date(dateStr) {
+            const date  = new Date(dateStr);
+
+            const day = date.getUTCDate();
+            const month = date.getUTCMonth() + 1;
+            const year = date.getUTCFullYear();
+
+            return `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`;
+        }
+
+        const token = sessionStorage.getItem('authToken')
+        
+
+        function response_received(response) {
+            return response.json()
+        }
+
+        function parse_data(data) {
+            
+            const container = document.getElementById('container')
+
+            for (let i = 0; i < data.length; i++) {
+
+                const card = document.createElement("div");
+                card.setAttribute("class", "card");
+                card.style.width = "18rem";
+
+                const card_body = document.createElement("div");
+                card_body.setAttribute("class", "card-body");
+
+
+                const title = document.createElement("h5");
+                title.setAttribute("class", "card-title")
+                title.innerText = data[i].monto + "$"
+
+                const text = document.createElement("p");
+                text.setAttribute("class", "card-text");
+                text.innerText = `La reservas es desde ${parse_date(data[i].fecha_llegada)} hasta ${parse_date(data[i].fecha_salida)} en la habitacion ${data[i].id_habitacion}`
+
+                const linkUno = document.createElement("button");
+                linkUno.innerText = "Pagar"
+                linkUno.setAttribute("class", "btn btn-outline-success btn-sm");
+                linkUno.style.marginRight = "5px"
+
+                const linkDos = document.createElement("button");
+                linkDos.innerText = "Cancelar"
+                linkDos.setAttribute("class", "btn btn-outline-danger btn-sm")
+                linkDos.style.marginLeft = "5px"
+
+
+                card_body.append(title);
+                card_body.append(text);
+                card_body.append(linkUno);
+                card_body.append(linkDos);
+                card.append(card_body);
+                container.append(card);
+
+            }
+
+            console.log(data)
+            
+        }
+
+        function handle_error(error) {
+            console.log("Error!", error)
+        }
+
+        fetch('http://127.0.0.1:5000/reservas/personal', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+        })
+        .then(response_received)
+        .then(parse_data)
+        .catch(handle_error)
+
+
+    </script>
+</body>
+</html>
