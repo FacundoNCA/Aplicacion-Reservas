@@ -19,13 +19,16 @@ nav {
     flex-wrap: wrap;
     font-size:smaller;
 }
-.menu li {
-    margin: 0 20px;
-}
-.menu a {
+
+.menu .link {
     color: #fff;
     text-decoration: none;
 }
+
+.menu li {
+    margin: 0 20px;
+}
+
 .menu .logo a {
     font-size: 24px;
 }
