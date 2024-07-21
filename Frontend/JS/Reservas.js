@@ -1,6 +1,6 @@
 function parseDate(date){
-    splitDate = date.split("-");
-    reversed = splitDate.reverse()
+    let splitDate = date.split("-");
+    let reversed = splitDate.reverse()
 
     return reversed.join('/')
 }
