@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas de pag</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="Estilo/Estilo_r.css">
-    <script src="./JS/Reservas.js"></script>
+    <script src="./JS/Reservas.js" type="module"></script>
+
 </head>
 <body>
     <nav>
         <ul class="menu">
-            <li class="logo"><a href="Pagina_p.html">Piña colada</a></li>
-            <li class="item"><a href="Pagina_p.html">Inicio</a></li>
-            <li class="item"><a href="Habitaciones_r.html">Servicios</a></li>
-            <li class="item"><a href="Contacto.html">Contacto</a></li>
-            <a href="login.html"><button id="login-btn">Iniciar Sesión</button></a>
+          <li class="logo"><a href="Pagina_p.html">Piña colada</a></li>
+          <li class="item"><a href="Pagina_p.html">Inicio</a></li>
+          <li class="item"><a href="Habitaciones_r.html">Habitaciones</a></li>
+          <li class="item"><a href="Reservas.html">Reservas</a></li>
+          <li class="item"><a href="Contacto.html">Contacto</a></li>
+          <a href="login.html"><button class="login-btn" id="login-btn">Iniciar Sesión</button></a>
+          <button class="login-btn" id="logout-btn" style="display: none;">Cerrar sesion</button>
         </ul>
-    </nav>
-
+      </nav>
     <header>
         <h1>Reservas</h1>
     </header> 

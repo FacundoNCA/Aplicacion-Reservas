@@ -21,7 +21,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         if (data.succes) {
             sessionStorage.setItem('authToken', data.token);;
             // TODO: Cambiar la ruta
-            window.location.href = "Reservas.html";
+            window.history.back()
         } else {
             document.getElementById('login-message').innerText = "Email o contraseña incorrecto/s"
         }

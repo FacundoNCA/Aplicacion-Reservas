@@ -1,3 +1,5 @@
+import {closeSession, isAuth} from './sessionHandle.js'
+
 function parseDate(date){
     splitDate = date.split("-");
     reversed = splitDate.reverse()
@@ -5,9 +7,29 @@ function parseDate(date){
     return reversed.join('/')
 }
 
+
+
 document.addEventListener("DOMContentLoaded", function() {
     var formulario = document.getElementById("formulario");
 
+    
+
+    if (!isAuth()) {
+        Swal.fire("Necesitas autenticarse antes de reservar"
+
+        ).then((res) => {
+            window.location.href = "login.html";
+        })
+    } else {
+        const loginButton = document.getElementById('login-btn')
+        const logoutButton = document.getElementById('logout-btn')
+
+
+        loginButton.style.display = 'none';
+        logoutButton.style.display = 'block'
+        logoutButton.onclick = closeSession;
+
+    }
 
     formulario.addEventListener("submit", function(event) {
         event.preventDefault();
