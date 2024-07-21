@@ -7,10 +7,11 @@ body {
 }
 
 header {
-    background-color: rgb(208, 67, 67);
+    background: url('https://th.bing.com/th/id/R.761b92b9c1e94419645eeb82d9b9911e?rik=YCtYNOP0N6eKbg&riu=http%3a%2f%2fwww.marazulhotel.com.ec%2fwp-content%2fuploads%2f2022%2f08%2f51f6.jpg&ehk=JsKppv%2fpEnb7lRwSEv%2fUfDksTsa8sxN5LN1lulWwnWk%3d&risl=&pid=ImgRaw&r=0');
     color: white;
-    padding: 15px 0;
+    padding: 20px 0;
     text-align: center;
+    background-position: 0px 200px;
 }
 
 @media (max-width: 600px) {

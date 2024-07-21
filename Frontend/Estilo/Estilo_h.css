@@ -11,7 +11,7 @@ header {
     background: url('https://th.bing.com/th/id/OIP.yt3l8OZVnn8yym8pW8VDTgHaE8?rs=1&pid=ImgDetMain') no-repeat center center;
     background-size: cover;
     color: white;
-    padding: 100px 0;
+    padding: 200px 0;
     position: relative; /* Añadido para permitir posicionamiento absoluto de hijos */
     text-align: center;
 }
@@ -40,7 +40,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    font-size:smaller;
+    font-size:small;
 }
 
 .menu li {
@@ -49,16 +49,17 @@ nav {
 
 .menu .logo a{
     font-size: 24px;
-    color: white;
-    text-decoration: none;
 }
 
-.menu .item a, #login-btn {
-    color: white;
+.menu a{
+    color: #fff;
     text-decoration: none;
-    font-size: 14px;
+    font-size: small;
 }
 
+a {
+    text-decoration: none;
+}
 h1, h2 {
     color: #333;
 }
@@ -78,6 +79,20 @@ h1, h2 {
 
 .habitacion h3 {
     margin-top: 0;
+}
+
+#login-btn {
+    background-color:#333;
+    color: #fff ;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: perpetua, sans-serif;
+    font-size: 1.5em;
+}
+#login-btn:hover {
+    background-color: #555;
 }
 
 @media (max-width: 600px) {
