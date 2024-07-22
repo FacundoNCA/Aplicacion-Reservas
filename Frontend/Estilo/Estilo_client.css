@@ -1,0 +1,130 @@
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0; /* Colócala en la parte superior */
+    left: 0; /* Alinea al borde izquierdo */
+    width: 100%; /* Ancho completo */
+    z-index: 1000; /* Asegura que esté sobre otros contenidos */
+}
+
+body {
+    margin: 0; /* Elimina el margen del body */
+    padding-top: 60px; /* Agrega un relleno en la parte superior para no cubrir el contenido con la barra fija */
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: smaller;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu .logo a {
+    font-size: 24px;
+}
+
+#login-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: perpetua, sans-serif;
+    font-size: 1.5em;
+}
+
+#login-btn:hover {
+    background-color: #555;
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+    background-color: #333;
+    color: #fff;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #fff;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #555;
+}
+
+/* Estilos para la imagen de fondo con opacidad */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    background-image: url('https://img.freepik.com/fotos-premium/vista-habitaciones-hotel-noche-vistas-playa_795881-11673.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Cambia los valores de rgba para ajustar el color y la opacidad */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white; /* Asegúrate de que el texto sea visible sobre la imagen */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Ajustar el contenedor de tarjetas */
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas en el contenedor */
+    gap: 20px; /* Espacio entre las tarjetas */
+    margin-top: 20px; /* Espacio arriba del contenedor */
+}
+
+/* Ajustar las tarjetas */
+.card {
+    border: none;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    width: 18rem; /* Ancho fijo para las tarjetas */
+    margin: 10px; /* Espacio interno entre las tarjetas */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Opcional: ajuste de texto dentro de las tarjetas */
+.card-body {
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+}

@@ -12,7 +12,7 @@ from config import config
 app = Flask(__name__)
 CORS(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@127.0.0.1:5432/app_reservas'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://adrian:12345@127.0.0.1:5432/Reservas'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = "aguanteboca"
 migrate = Migrate(app, db)
