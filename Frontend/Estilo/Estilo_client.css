@@ -1,17 +1,17 @@
-/* Estilos para la barra de navegación */
+
 nav {
     background-color: #333;
     padding: 10px 0;
-    position: fixed; /* Fija la barra en la parte superior */
-    top: 0; /* Colócala en la parte superior */
-    left: 0; /* Alinea al borde izquierdo */
-    width: 100%; /* Ancho completo */
-    z-index: 1000; /* Asegura que esté sobre otros contenidos */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
 }
 
 body {
-    margin: 0; /* Elimina el margen del body */
-    padding-top: 60px; /* Agrega un relleno en la parte superior para no cubrir el contenido con la barra fija */
+    margin: 0; 
+    padding-top: 60px; 
 }
 
 .menu {
@@ -89,42 +89,42 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Cambia los valores de rgba para ajustar el color y la opacidad */
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 
 .content {
     position: relative;
     z-index: 1;
-    color: white; /* Asegúrate de que el texto sea visible sobre la imagen */
+    color: white; 
     text-align: center;
     padding: 20px;
 }
 
-/* Ajustar el contenedor de tarjetas */
+
 #container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centra las tarjetas en el contenedor */
-    gap: 20px; /* Espacio entre las tarjetas */
-    margin-top: 20px; /* Espacio arriba del contenedor */
+    justify-content: center; 
+    gap: 20px; 
+    margin-top: 20px; 
 }
 
 /* Ajustar las tarjetas */
 .card {
     border: none;
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
-    width: 18rem; /* Ancho fijo para las tarjetas */
-    margin: 10px; /* Espacio interno entre las tarjetas */
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    width: 18rem; 
+    margin: 10px; 
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
-/* Opcional: ajuste de texto dentro de las tarjetas */
+/
 .card-body {
-    text-align: center; /* Centra el texto dentro de la tarjeta */
+    text-align: center; 
 }
